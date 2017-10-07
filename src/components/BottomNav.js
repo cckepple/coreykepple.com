@@ -1,19 +1,23 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
-// import FontIcon from 'material-ui/FontIcon';
-// import IconFamily from 'material-ui/svg-icons/action/pregnant-woman';
-// import IconHome from 'material-ui/svg-icons/action/home';
-// import IconResume from 'material-ui/svg-icons/hardware/developer-board';
-// const familyIcon = <IconFamily />;
-// const homeIcon = <IconHome />;
-// const resumeIcon = <IconResume />;
+import FontIcon from 'material-ui/FontIcon';
+import IconFamily from 'material-ui/svg-icons/action/pregnant-woman';
+import IconHome from 'material-ui/svg-icons/action/home';
+import IconResume from 'material-ui/svg-icons/hardware/developer-board';
+const familyIcon = <IconFamily />;
+const homeIcon = <IconHome />;
+const resumeIcon = <IconResume />;
 
 export default class BottomNav extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {selectedIndex: 0};
+	}
+
+	clickTab(selectedIndex){
+		this.setState({selectedIndex: selectedIndex, runAnimation:true});
 	}
 
 	componentDidMount(){
@@ -25,7 +29,7 @@ export default class BottomNav extends Component {
   			selectedIndex = 2;
   		}else{
   			selectedIndex = 1;
-  		}
+		}
   		this.setState({selectedIndex: selectedIndex, runAnimation:true});
   		this.animTimer = setTimeout(() => this.setState({runAnimation:false}), 1500);
 	}
@@ -40,17 +44,20 @@ export default class BottomNav extends Component {
 				<BottomNavigation id="bottom-nav" style={{position:"fixed",bottom:"0px", opacity:.8, textAlign:"center"}} selectedIndex={this.state.selectedIndex}>
 			    	<BottomNavigationItem
 			      	label="Resume"
-			      	/* icon={resumeIcon} */
+					icon={resumeIcon}
+					onClick={() => this.clickTab(0)}
 			      	containerElement={<Link to="/resume"/>}
 			    	/>
 				    <BottomNavigationItem
 				    label="Welcome"
-				    /* icon={homeIcon} */
+					icon={homeIcon}
+					onClick={() => this.clickTab(1)}
 				    containerElement={<Link to="/"/>}
 				    />
 			    	<BottomNavigationItem
 			      	label="Family"
-			      	/* icon={familyIcon} */
+					icon={familyIcon}
+					onClick={() => this.clickTab(2)}
 			      	containerElement={<Link to="/family"/>}
 			    	/>
 			    </BottomNavigation>

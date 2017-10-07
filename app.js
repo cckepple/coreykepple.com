@@ -9,10 +9,10 @@ const app = express();
 
 
 // Serve static files from the React app
-console.log(path.join(__dirname, '/build'));
-app.use('/static', express.static(path.join(__dirname, '/build')));
+console.log(path.join(__dirname, '/public'));
+app.use('/static', express.static(path.join(__dirname, '/public')));
 
-app.get( '/', async ( req, res ) => {
+app.get( '*', async ( req, res ) => {
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 

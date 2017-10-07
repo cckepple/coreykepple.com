@@ -3,13 +3,14 @@
     "express": "^4.16.1",
     "http": "0.0.0",
     "install": "^0.10.1",
-    "material-ui": "^1.0.0-beta.13",
+    "material-ui": "^0.19.3",
     "nodemon": "^1.12.1",
     "npm": "^5.4.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0-beta.7",
-    "react-router": "^3.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
@@ -22,6 +23,6 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "webpack": "webpack --progress --color --watch --display-error-details"
+    "webpack": "webpack --progress --color --display-error-details"
   }
 }

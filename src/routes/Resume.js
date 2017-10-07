@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Layout from './Layout';
+// import Layout from './Layout';
 import Paper from 'material-ui/Paper';
 import ResumeSummary from '../components/resume/Summary';
 import ResumeExperience from '../components/resume/Experience';
@@ -62,7 +62,6 @@ export default class Resume extends Component {
 			selectedTabStyle = "linear-gradient(-45deg, #8bd1f1,#fff)";
 
 		return (
-			<Layout title="Page 1">
 				<div style={{textAlign:"center"}}>
 					<Paper zDepth={3} style={styleSheet.resumeBox}>
 						{this.setPage(selectedTab)}
@@ -72,14 +71,14 @@ export default class Resume extends Component {
 								return	<div key={index}
 											 onClick={ () => { clickTab(index) } }
 											 style={{background: selectedTab == index ? selectedTabStyle : ""}}
-											 className="tabBtn">
+											 className="resumeTabBtn">
 											<span style={styleSheet.tabTitle}>{tab}</span>
 										</div>
 							})}
 						</div>
 					</Paper>
 				</div>
-			</Layout>);
+			);
 	}
 }
 

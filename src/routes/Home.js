@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import Layout from './Layout';
+// import Layout from './Layout';
 import Paper from 'material-ui/Paper';
 const styleSheet = {
 	circleImg:{
@@ -19,16 +19,16 @@ export default class IndexPage extends Component {
 	images = 
 	// shuffle(
 		[
-		{path:'/images/plvl.jpg',  title:'a developer.', selected: 'show'},
-		{path:'/images/mex.jpg',  title:'a dad.', selected: 'none'},
-		{path:'/images/derp.jpg',  title:'a thinker.', selected: 'none'},
-		{path:'/images/shark.jpg',  title:'a fisherman.', selected: 'none'},
-		{path:'/images/run.jpg',  title:'an athlete.', selected: 'none'},
-		{path:'/images/teddymex2.jpg',  title:'a father.', selected: 'none'},
-		{path:'/images/wed.jpg',  title:'a husband.', selected: 'none'},
-		{path:'/images/cry.jpg',  title: 'a caregiver.', selected: 'none'},
-		{path:'/images/famm.jpg',  title: 'a relative.', selected: 'none'},
-		{path:'/images/skydive.jpg',  title: 'an adventurer.', selected: 'none'},
+		{path:'/static/images/plvl.jpg',  title:'a developer.', selected: 'show'},
+		{path:'/static/images/mex.jpg',  title:'a dad.', selected: 'none'},
+		{path:'/static/images/derp.jpg',  title:'a thinker.', selected: 'none'},
+		{path:'/static/images/shark.jpg',  title:'a fisherman.', selected: 'none'},
+		{path:'/static/images/run.jpg',  title:'an athlete.', selected: 'none'},
+		{path:'/static/images/teddymex2.jpg',  title:'a father.', selected: 'none'},
+		{path:'/static/images/wed.jpg',  title:'a husband.', selected: 'none'},
+		{path:'/static/images/cry.jpg',  title: 'a caregiver.', selected: 'none'},
+		{path:'/static/images/famm.jpg',  title: 'a relative.', selected: 'none'},
+		{path:'/static/images/skydive.jpg',  title: 'an adventurer.', selected: 'none'},
 
 	]
 // );
@@ -108,7 +108,6 @@ export default class IndexPage extends Component {
 	render() {
 		var selectedIndex = this.state.selectedIndex;
 		return (
-			<Layout title="Home">
 				<div id="page-index" style={{marginTop:"25px", textAlign: "center"}}>
 					<Paper style={styleSheet.circleImg} zDepth={3} circle={true} onClick={() => this.runImageLoop(0)}>
 					{
@@ -125,6 +124,6 @@ export default class IndexPage extends Component {
 					<h1> Hi, I'm Corey </h1>
 					<h4> I am {this.state.title} </h4>
 				</div>
-			</Layout>);
+			);
 	}
 }

@@ -7,9 +7,9 @@ const config = {
 		'./src' ///index'
 	],
 	output: {
-		path: path.resolve(__dirname, './build'),
+		path: path.resolve(__dirname, './public/build'),
 		filename: 'bundle.js',
-		publicPath: '/build/',
+		publicPath: '/public/build/',
 		sourceMapFilename: 'bundle.js.map',
 	},
 	module: {

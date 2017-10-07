@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Layout from './Layout';
+// import Layout from './Layout';
 
 export default class Family extends Component {
 	constructor(props) {
@@ -11,10 +11,9 @@ export default class Family extends Component {
 
 	render() {
 		return (
-			<Layout title="Page 2">
 				<div>
 					Family
 				</div>
-			</Layout>);
+			);
 	}
 }

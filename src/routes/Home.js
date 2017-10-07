@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-// import Layout from './Layout';
+import shuffle from 'shuffle-array';
 import Paper from 'material-ui/Paper';
 const styleSheet = {
 	circleImg:{
@@ -13,12 +13,8 @@ const styleSheet = {
 	},
 };
 
-// var shuffle = require('shuffle-array')
-
 export default class IndexPage extends Component {
-	images = 
-	// shuffle(
-		[
+	images = shuffle([
 		{path:'/static/images/plvl.jpg',  title:'a developer.', selected: 'show'},
 		{path:'/static/images/mex.jpg',  title:'a dad.', selected: 'none'},
 		{path:'/static/images/derp.jpg',  title:'a thinker.', selected: 'none'},
@@ -28,10 +24,8 @@ export default class IndexPage extends Component {
 		{path:'/static/images/wed.jpg',  title:'a husband.', selected: 'none'},
 		{path:'/static/images/cry.jpg',  title: 'a caregiver.', selected: 'none'},
 		{path:'/static/images/famm.jpg',  title: 'a relative.', selected: 'none'},
-		{path:'/static/images/skydive.jpg',  title: 'an adventurer.', selected: 'none'},
-
-	]
-// );
+		{path:'/static/images/skydive.jpg',  title: 'an adventurer.', selected: 'none'}
+	]);
 	animIntervals = [];
 	imageLoops = 0;
 	imageTimer;

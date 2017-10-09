@@ -2,6 +2,7 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'react-hot-loader/patch';
 
 
 // http://stackoverflow.com/a/34015469/988941

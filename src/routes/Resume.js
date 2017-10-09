@@ -8,7 +8,7 @@ import ResumeExperience from '../components/resume/Experience';
 const styleSheet = {
 	resumeBox:{
 		textAlign: 'center',
-		height: '65vh',
+		height: '450px',
 		width: '95%',
 		maxWidth: '800px',
 		overflow:'hidden',
@@ -59,7 +59,7 @@ export default class Resume extends Component {
 	render() {
 		var clickTab = this.select.bind(this),
 			selectedTab = this.state.selectedIndex,
-			selectedTabStyle = "linear-gradient(-45deg, #8bd1f1,#fff)";
+			selectedTabStyle = "#dde4e8";
 
 		return (
 				<div style={{textAlign:"center"}}>

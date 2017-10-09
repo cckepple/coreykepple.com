@@ -6,4 +6,4 @@ COPY . /var/www/
 WORKDIR /var/www
 RUN npm rebuild nodemon
 
-ENTRYPOINT ["/var/www/ops/entrypoint.sh"]
+ENTRYPOINT ["/var/www/entrypoint.sh"]

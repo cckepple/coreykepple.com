@@ -9,4 +9,3 @@ services:
       - ./:/var/www/
     ports:
       - '8080:80'
-    entrypoint: /var/www/entrypoint.sh -d

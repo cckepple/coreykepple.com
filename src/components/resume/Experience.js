@@ -30,13 +30,10 @@ const styleSheet = {
         cursor:'pointer',
     },
     experienceText: {
-        padding: '5%',
         lineHeight: 1.5,
         textAlign: 'left'
     }
 }
-
-
 
 export default class Experience extends Component {
 
@@ -83,50 +80,92 @@ export default class Experience extends Component {
             {
                 company:'Bounce Exchange',
                 title: 'Software Engineer I',
-                time: '2016-Present',
-                bullets:[
-                    `Build Javascript integrations which enable our platform to run on client sites.
-                     Many of our clients operate some of the highest trafficked e-commerce and publisher sites online.`,
-                    `Developed several integrations using PHP and GoLang which enabled data transfer from backend systems to various client email service providers and analytics tools.`,
-                    `Productized new features into our internal web app using EmberJs on the front-end, communicating with PHP and Node API endpoints.`,
-                    `Managed a team of 5 developers with the responsibility of task delegation, performance management, 
-                    new employee onboarding and ongoing training. `,
-                    `Regularly act as a technical consultant both internally and with clients.`
-                ],
-                text:''
+                time: '2016 - Present',
+                text:[
+                    {
+                        body:`Build Javascript integrations into our platform which execute on client sites, 
+                        clients include some of the highest trafficked ecommerce and publisher websites online.`
+                    },
+                    {
+                        body:`Develop PHP and GoLang systems  which enabled data transfer from our AWS backend to 
+                        various client email service providers and analytics tools.`
+                    },
+                    {
+                        body:`Productize and deploy features into our internal web app built on EmberJs, 
+                        communicating with PHP and Node API endpoints.`
+                    },
+                    {
+                        body:`Managed a team of 5 developers with the responsibility of task delegation, performance 
+                        management, new employee onboarding and ongoing training. `
+                    },
+                    {
+                        body:`Regularly act as a technical consultant both internally and with clients.`
+                    }
+                ]
             },
             {
                 company: 'Parlevel Systems',
                 title: 'Lead Web Developer',
-                time: '2014-2016',
-                bullets:[
-                    `Developed and deployed front and backend code daily toward the improvement of our client facing web dashboard.`,
-                    `Created a REST API which powered data for a mobile application and point of sale kiosk using PHP.`,
-                    `Built a virtual wallet web application utilizing a PHP API backend and a React user interface`,
-                    `Led a team which developed a point of sale kiosk user interface in Javascript. 
-                    The kiosk had a number of hardware components all connected with the software.`,
-                    `Quickly promoted to take on managerial tasks and planned the sprint cycles of a 6 person 
-                    development team. Kept all departments in sync with software goals and deadlines.`
-                ],
-                text:''
+                time: '2014 - 2016',
+                text:[
+                    {
+                        body: `Developed and deployed front and backend code daily toward the improvement of our client 
+                        facing web dashboard.`
+                    },
+                    {
+                        body: `Created REST API using PHP which provided data to our mobile application and point of sale 
+                        kiosk products.`,
+                    },
+                    {
+                        body:`Built a virtual wallet web application utilizing a PHP backend and a React user interface`,
+                    },
+                    {
+                        body:`Led a team which developed a point of sale kiosk user interface in Javascript. 
+                        The kiosk had a number of hardware components integrated with the software.`,
+                    },
+                    {
+                        body:`Quickly promoted to take on managerial tasks and planned the sprint cycles of a 6 person 
+                        development team. Kept all departments in sync with software goals and deadlines.`
+                    }
+                ]
             },
             {
                 company: 'Personal Work',
-                title: '',
-                time: '',
-                bullets:[],
-                text:''
+                text:[
+                    {
+                        title: `coreykepple.com`,
+                        body:`This site, coreykepple.com, is my own personal creation.  Developed using a simple express 
+                        backend and react on the client side.  It was built within a Docker containerized 
+                        environment and is deployed on a Digital Ocean droplet.`,
+                        github:'https://github.com/cckepple/coreykepple.com',
+                    },
+                    {
+                        title:`scoresquares.xyz`,
+                        body:`Score Squares was a personal project to recreate a common grid style gambling game, often 
+                        played during football games, as a web application.  It's built with PHP, using the Laravel 
+                        framework, and frontend using AngularJs.`,
+                        github:'https://github.com/cckepple/score_squares',
+                        demo: 'http://scoresquares.xyz'
+                    }
+                ]
             },
             {
                 company: 'University of North Florida',
-                title: ' B.A., Public Administration',
-                time: 'Graduated Spring 2012',
-                bullets:[],
-                text: `I graduated with a B.A. in Public Administration with the intent of pursuing a law degree. 
-                Over my undergrad I consistently earned Deans List recognition, was a published co-author of an op-ed 
-                in the Florida Times Union on the conflict in Sudan and played on the Men’s Lacrosse Club. I also 
-                participated in a semester abroad at the Otto Friedrich Universität Bamberg, Germany. While in Europe 
-                I studied Political Science and taught english as a second language courses as a University tutor.`
+                title: 'B.A., Public Administration',
+                text: [
+                    {
+                        body:`I graduated from UNF with the intent of pursuing a law degree. 
+                            During my undergrad I consistently earned Dean's List recognition, was a published co-author 
+                            of an op-ed in the Florida Times Union on the conflict in Sudan and played on the Men’s 
+                            Lacrosse Club. I also participated in a semester abroad at the Otto Friedrich Universität 
+                            Bamberg, Germany. While in Europe I studied Political Science and taught english as a second 
+                            language courses as a University tutor.`,
+                        conclusion:`Upon graduation and facing the decision of law school debt and a job market that was 
+                            reportedly over supplied, I decided to pivot.  Coding had always been a passion hobby of mine
+                            but I never truly saw a career in it.  About a year after college I immersed myself back into
+                            the web development world and haven't looked back since.`
+                    }
+                ]
             }
         ];
         return (
@@ -134,9 +173,12 @@ export default class Experience extends Component {
                 {experience.map((job, index)=>{
                     let display = selectedIndex == index ? '' : 'none';
                     return (
-                        <div key={index} style={{display:display}}>
-                            <div><span>{job.company}</span><span style={{position:'absolute',right:'5%'}}>{job.time}</span></div>
-                            <div>{job.title}</div>
+                        <div key={index} style={{display:display, padding:'5% 5% 5% 10%'}}>
+                            <h4 style={{marginBottom:'5px',marginTop:'0px'}}>
+                                <span>{job.company}</span>
+                                {job.time && <span style={{position:'absolute',right:'5%'}}>{job.time}</span>}
+                            </h4>
+                            {job.title && <h6 style={{marginTop:'0px', marginBottom:'0px'}}>{job.title}</h6>}
                             {self.showExperienceInfo(job)}
                         </div>
                     )
@@ -146,24 +188,30 @@ export default class Experience extends Component {
     }
 
     showExperienceInfo(job){
-        if(job.bullets.length){
+        if(job.text && job.text.length){
             return (
-                <ul style={{fontSize:'15px'}}>
-                    {job.bullets.map((bullet, index) => {
-                        return (
-                            <li key={index}>{bullet}</li>
-                        )
-                    })}
-                </ul>
+                job.text.map((txt, index) =>{
+                    let getTitle = (hasLink, title) => {
+                        if(hasLink){
+                            return <span><a href={hasLink}>{title}</a></span>;
+                        }
+                        return <span>{title}</span>;
+                    }
+
+                    return (<div key={index}>
+                        {txt.title &&
+                            <h5 style={{marginBottom:'5px'}}>
+                                {getTitle(txt.demo, txt.title)}
+                                {txt.github && <a target={'_blank'} style={{padding:'5px'}} href={txt.github}><img style={{width:'18px'}} src={'/static/images/github.svg'} /></a>}
+                            </h5>}
+
+                        <p style={{fontSize:'14px'}}>{txt.body}</p>
+                        {txt.conclusion && <p style={{fontSize:'14px'}}>{txt.conclusion}</p>}
+                    </div>);
+                })
+                
             );
-        }
-            
-        if(job.text.length){
-            return (
-                <p style={{fontSize:'15px', textIndent:'50px'}}>{job.text}</p>
-            );
-        }
-        
+        }   
     }
 
     render(){

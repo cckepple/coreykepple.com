@@ -8,4 +8,4 @@ services:
     volumes:
       - ./:/var/www/
     ports:
-      - '8080:80'
+      - '1337:80'

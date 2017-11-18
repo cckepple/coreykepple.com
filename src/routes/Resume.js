@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import ResumeSummary from '../components/resume/Summary';
 import ResumeExperience from '../components/resume/Experience';
+import ResumeContact from '../components/resume/Contact';
 
 
 const styleSheet = {
@@ -53,6 +54,7 @@ export default class Resume extends Component {
 			return <ResumeExperience/>;
 		}else{
 			// Contact
+			return <ResumeContact/>;
 		}
 	}
 

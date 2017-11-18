@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 const styleSheet = {
 	container:{
-		padding:'25px 10% 0px 10%',
+		padding:'0px 10% 0px 10%',
 		height: '80%',
 		minWidth: '200px',
 		overflow: 'auto',
@@ -10,32 +10,37 @@ const styleSheet = {
 	},
 	tech: {
 		fontWeight: 'normal',
-
+		fontSize:'14px',
+	},
+	summary:{
+		fontSize:'14px',
 	}
 }
 
-const summaryText = `This is one of the highest compliments that I’ve been given and it’s something I take a great deal of pride in.
-I truly find joy in solving the problems that web development as a profession provides.  
-I live for the opportunity to learn new technologies and build high quality applications that can handle modern web traffic.
-I hope we can talk about the problems you’re trying to solve and see if I might be able to help.`;
+const summaryTextOne = `I love to solve problems.  As a web developer we're often given the opportunity to do just that.
+The abundance of those opportunities and the ability to learn new things has enabled me to become 
+extremely passionate about my work.  That passion then drives my work ethic and in the end it leads to a 
+daily happiness I attain just by clocking in.`;
 
-const techs = `Javascript, PHP, GoLang, Python, CSS3, HTML5,  MySql, MongoDB
-Vagrant, Docker, Apache, Nginx, Node, NPM, Yarn, Composer, Git
+const summaryTextTwo = `I've been told I'm pretty easy to work with and am the type of person that knows how to get
+things done.  If you have problems which could be helped by a person like me, then let's talk!`
+
+const techs = `Javascript, PHP, GoLang, Python, CSS3, HTML5,  MySql, MongoDB,
+Vagrant, Docker, Apache, Nginx, Node, NPM, Yarn, Composer, Git,
 Webpack, Babel, Laravel, Express, Sails, Ember, Angular, React, Redux, jQuery`;
 
 export default class Summary extends Component {
 
 	render(){
 		return (<div style={styleSheet.container}>
-					<p style={styleSheet.summary}>
-							{summaryText}
-					</p>
-					<p style={{fontWeight:'bold'}}>
-						Some of the tech I've worked with:<br/>
-							<span style={styleSheet.tech}>
-								{techs}
-							</span>
-					</p>
+					<h4 style={{marginBottom:'15px', fontWeight:'bold'}}>About me:</h4>
+					<div style={styleSheet.summary}>{summaryTextOne}</div>
+					<br />
+					<div style={styleSheet.summary}>{summaryTextTwo}</div>
+					<h4 style={{marginBottom:'5px', fontWeight:'bold'}}>Some tech I've worked with:</h4>
+					<div style={styleSheet.tech}>
+						{techs}
+					</div>
 				</div>);
 	}
 }

@@ -115,7 +115,7 @@ export default class IndexPage extends Component {
 											}}/>
 					})}
 					</Paper>
-					<h1> Hi, I'm Corey </h1>
+					<h1> Hi, I'm Corey. </h1>
 					<h4> I am {this.state.title} </h4>
 				</div>
 			);

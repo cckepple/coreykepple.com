@@ -26,6 +26,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "scripts": {
+    "build": "webpack", 
     "webpack": "webpack --progress --color --display-error-details --watch",
     "start": "webpack-dev-server --hot"
   }
